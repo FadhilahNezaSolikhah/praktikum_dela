@@ -1,0 +1,55 @@
+body{
+    background-color: bisque;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#header{
+    background-color: rgb(218, 152, 109);
+    padding-bottom: 30px;
+    color: blue;
+}
+
+h1{
+    text-align: center;
+}
+
+blockquote{
+    background-color: rgb(231, 190, 8);
+    border: 1px dotted red;
+    text-align: center;
+    width: 700px;
+    height: 70px;
+    margin: auto;
+    padding-left: 280px;
+    padding-right: 280px;
+    color: black;
+}
+
+nav {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+ }
+
+ nav ul li {
+    display: inline-block;
+    line-height: 100px;
+ }
+
+.gambar{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    height: 200px;
+}
+
+#huruf{
+    font-size: 300%;
+    color: blue;
+}
+
+.koleksi{
+    display:block;
+    padding: 50px;
+}
