@@ -1,0 +1,69 @@
+/* Reset margin dan padding */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header, article, aside, footer{
+    padding: 1em;
+}
+
+/* Flex Container */
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: pink;
+    margin: 20px;
+    text-align: center;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}
+
+header, footer{
+    height: 5vh;
+    background: rgb(4, 145, 145);
+}
+
+/* Flex Container */
+.container{
+    display: flex;
+    padding-top: 1em;
+    padding-bottom: 1em; 
+}
+
+aside{
+    flex-grow: 1;
+    background: rgb(5, 92, 92);
+    height: 24em;
+    margin-right: 2em;
+}
+
+article{
+    background: rgb(202, 76, 76);
+    flex: 0 0 70vw;
+    height: 24em;
+}
+
+.image{
+    display: flex;
+    height: 180px;
+    flex-grow: 1;
+    padding-top: 0,5em;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.text p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+}
+
+.text1 p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
