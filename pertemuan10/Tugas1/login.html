@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form Authentication</title>
+
+<!-- CSS -->
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: auto;
+            width: 30em;
+        }
+
+        .container {
+            background-color: rgb(247, 223, 11);
+            border-radius: 6px;
+            height: 400px;
+            margin: 1em 26em;
+        }
+
+        body {
+            background-color:rgb(230, 255, 119);
+        }
+
+        .forgotpw {
+            color: blue;
+            font-size: 10pt;
+            margin-top: 3px;
+            text-align: right;
+        }
+
+        .content {
+            padding: 15px 40px;
+        }
+
+        .main {
+            letter-spacing: 3px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(138, 114, 6);
+            text-align: center;
+            border-radius: 20px;
+            border: none;
+            color: white;
+            height: 42px;
+            margin: 0 auto;
+            margin-top: 50px;
+            width: 150px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .border {
+            height: 1px;
+            width: 100%;
+            background-color: rgb(245, 222, 222);
+        }
+
+        .input {
+            background-color: rgb(247, 255, 177);
+            border: black;
+        }
+    </style>
+
+<!-- Java Script -->
+    <script src="otentikasi.js"></script>
+
+<!-- HTML Document-->
+
+</head>
+<body>
+    <hr><hr>
+    <a href="" onmouseover="dekor1()" onmouseout="dekor2()" id="home"><h1>Login Form Authentication</h1></a>
+    <hr><hr>
+    <br>
+    <div class="container">
+        <div class="content">
+            <div class="main">
+                <h2>LOGIN</h2>
+            
+            </div>
+            <form method="post" class="form">
+                <label for="username">Username :</label>
+                <br>
+                <input type="text" name="username" value="" class="input" id="username">
+                <div class="border"></div>
+
+                <br>
+
+                <label for="password">Password :</label>
+                <br>
+                <input type="Password" name="password" value="" class="input" id="password">
+                <div class="border"></div>
+                <br>
+                <a href="#">
+                    <p class="forgotpw">Lupa Password?</p>
+                </a>
+                <a id="login" class="button" onclick="cekform()">LOGIN</a>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <p><b>Contoh Login Form Autentikasi</b><br>
+            Username : fadhilahane1 <br>
+            Password : delacantik12</p>
+    </footer>
+</body>
+</html>

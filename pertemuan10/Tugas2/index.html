@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+
+<!-- CSS -->
+    <style>
+        body{
+            background-color: bisque;
+        }
+        h1 {
+            text-align: center;
+        }
+
+        h3{
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        p {
+            color: red;
+            float: left;
+            padding-right: 2em;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;            
+        }
+
+        .container{
+            padding-left: 80px;
+            background-color: aqua;
+            padding: 1em;
+            width: 50em;
+            margin-left: 15em;
+            border-radius: 5px;
+            margin-top: 0,1em;
+        }
+
+        #hasil p{
+            margin-left: 15em;
+            color: black;
+            margin-right: 50em;
+        }
+        
+        #hasil h2{
+            text-align: center;
+            color: black;
+        }
+    </style>
+
+<!-- HTML Document-->
+
+</head>
+<body>
+    <hr><hr>
+    <a style="text-decoration: none;" href="" onmouseover="dekor1()" onmouseout="dekor2()" id="home"><h1>Kereta Ticket Validation Form</h1></a>
+    <hr><hr>
+    <br>
+    <div class="container">
+        <form action="#">
+            <h3>Formulir Pemesanan Kereta</h3>
+            <div class="form-group">
+                <div class="flex">       
+                    <label style="float: left;" for="name" class="">Nama Pelanggan</label><p id="nama"></p>
+                </div>
+                <input type="text" class="form-control" placeholder="Nama Pelanggan" id="name" style="width: 350px; height: 25px;">
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="flex">
+                    <label style="float: left;" for="email" class="">Email</label><p id="imel"></p>
+                </div>
+                <input type="text" class="form-control" placeholder="Email" id="email1" style="width: 350px; height: 25px;">
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="flex">
+                    <label for="jam" class="">Jam Keberangkatan</label><p id="jamm"></p>
+                </div>
+                <input type="time" class="form-control" placeholder="Jam Keberangkatan" id="jam"  style="width: 350px; height: 25px;">
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="flex"> 
+                    <label for="tujuan" class="">Tujuan Keberangkatan</label><p id="tjn"></p>
+                </div>
+                <input type="text" class="form-control" placeholder="Tujuan Keberangkatan" id="tujuan" style="width: 350px; height: 25px;">
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="flex">
+                    <label for="tiket" class="">Jumlah Tiket</label><p id="tkt"></p>
+                </div>
+                <input type="number" class="form-control" placeholder="Jumlah Tiket" id="tiket" style="width: 350px; height: 25px;">
+            </div>
+            <br><br>
+            <div class="form-group">
+                <input onclick="validasi()" type="submit" value="Pesan Sekarang" class="btn btn-success">
+            </div>
+        </form>
+    </div>
+    
+    <div id="hasil">
+        <h2 id="inputhasil"></h2>
+        <p id="inputnama"></p><br>
+        <p id="inputemail"></p><br>
+        <p id="inputjam"></p><br>
+        <p id="inputtujuan"></p><br>
+        <p id="inputjumlah"></p><br>
+    </div>
+
+<!-- Java Script -->
+
+<script>
+    function dekor1() {
+        dekor_1 = document.getElementById("home");
+        dekor_1.style.color = "green";
+    }
+
+    function dekor2() {
+        dekor_2 = document.getElementById("home");
+        dekor_2.style.color = "black";
+    }
+
+    function validasi() {
+        let isian_nama = document.getElementById("name").value;
+        let p = document.getElementById("nama");
+
+        let isian_email = document.getElementById("email1").value;
+        let p1 = document.getElementById("imel");
+
+        let isian_jam = document.getElementById("jam").value;
+        let p2 = document.getElementById("jamm");
+
+        let isian_tujuan = document.getElementById("tujuan").value;
+        let p3 = document.getElementById("tjn");
+
+        let isian_tiket = document.getElementById("tiket").value;
+        let p4 = document.getElementById("tkt");
+
+        if(isian_nama == "") {
+            p.innerHTML = "Nama tidak valid.";
+        }else if(isian_nama.length > 30) {
+            p.innerHTML = "Maksimum 30 karakter.";
+        }else{
+            p.innerHTML = '<p></p>'
+            document.getElementById('inputnama').innerHTML = "Nama Pengguna : "+isian_nama;
+            document.getElementById('inputhasil').innerHTML = "Hasil Formulir Pemesanan Tiket";
+        }
+
+        if(isian_email == "") {
+            p1.innerHTML = "Email wajib diisi."
+        }else if(isian_email.length <= 9 || isian_email == "@gmail.com"){
+            p1.innerHTML = "Email tidak valid."
+        }else{
+            p1.innerHTML = '<p></p>'
+            document.getElementById('inputemail').innerHTML = "Email : "+isian_email;
+        }
+
+        if(isian_jam == "") {
+            p2.innerHTML = "Jam Keberangkatan wajib diisi."
+        }else{
+            p2.innerHTML = '<p></p>'
+            document.getElementById('inputjam').innerHTML = "Jam Keberangkatan : "+isian_jam;
+        }
+        
+        if(isian_tujuan == "") {
+            p3.innerHTML = "Tujuan Keberangkatan wajib diisi."
+        }else{
+            p3.innerHTML = '<p></p>'
+            document.getElementById('inputtujuan').innerHTML = "Tujuan Keberangkatan : "+isian_tujuan;
+        }
+
+        if(isian_tiket == "" || isian_tiket <= 0) {
+            p4.innerHTML = "Pembelian tiket minimal 1 tiket dan maximal 10 tiket."
+        }else if(isian_tiket > 10){
+            p4.innerHTML = "Maximum 10 tiket."
+        }else{
+            p4.innerHTML = '<p></p>'
+            document.getElementById('inputjumlah').innerHTML = "Jumlah Tiket : "+isian_tiket;
+        }
+    }
+</script>    
+
+</body>
+</html>
